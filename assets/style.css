@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+}
+
+
+.navbar {
+    text-align: center;
+    background-color: blue;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+.left-choice, .right-choice {
+    text-align: center;
+}
+
+.dog-container {
+    width: 80%;
+    margin: 5px auto;
+    text-align: center;
+}
