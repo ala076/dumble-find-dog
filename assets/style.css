@@ -23,3 +23,23 @@
     margin: 5px auto;
     text-align: center;
 }
+
+#dogs-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dogs-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#left-image {
+    width: 50%;
+}
+
+#right-image {
+    width: 50%;
+}
