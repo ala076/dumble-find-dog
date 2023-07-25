@@ -15,7 +15,15 @@ function getDogs(url) {
             return response.json();
         }
     }).then(function(data) {
-        console.log(data[0].name);
+        var leftImageUrl = data[0].image.url;
+        var rightImageUrl = data[1].image.url;
+        console.log(data);
+
+        var leftImage = document.getElementById('left-image');
+        var rightImage = document.getElementById('right-image');
+
+        leftImage.src = leftImageUrl;
+        rightImage.src = rightImageUrl;
     })
 };
 
