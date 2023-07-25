@@ -1,6 +1,9 @@
 var today = dayjs();
 var dayWeek = today.format('[Today is] dddd');
 $('#dayJsEl').text(dayWeek);
+var leftButton = document.getElementById('left-button');
+var rightButton = document.getElementById('right-button');
+var dogsStorageKey = 'liked-dogs';
 
 var apiKey = 'live_iX7RKYHwWFdPNAzqsGY55sDz4EP3dPmFV7zFe8mztg9rlJ3glpV2KggBggBTfXQq';
 
@@ -15,15 +18,41 @@ function getDogs(url) {
             return response.json();
         }
     }).then(function(data) {
+
         var leftImageUrl = data[0].image.url;
         var rightImageUrl = data[1].image.url;
         console.log(data);
-
+        const dataCopy = data.slice(2);
         var leftImage = document.getElementById('left-image');
         var rightImage = document.getElementById('right-image');
 
         leftImage.src = leftImageUrl;
         rightImage.src = rightImageUrl;
+
+        leftButton.addEventListener('click', function() {
+            if(dataCopy.length > 0) {
+                rightImage.src = dataCopy[0].image.url;
+                dataCopy.shift();
+            } else {
+                    var foundDog = data.find(function(dog) {
+                        return dog.image.url === leftImage.src;
+                    })
+                    localStorage.setItem(dogsStorageKey, JSON.stringify(foundDog));
+            }
+        })
+
+        rightButton.addEventListener('click', function() {
+            if(dataCopy.length > 0) {
+                leftImage.src = dataCopy[0].image.url;
+                dataCopy.shift();
+            } else {
+                var foundDog = data.find(function(dog) {
+                    return dog.image.url === document.getElementById('right-image').getAttribute('src')
+                })
+                localStorage.setItem(dogsStorageKey, JSON.stringify(foundDog));
+            }
+            
+        })
     })
 };
 
