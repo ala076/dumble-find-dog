@@ -39,7 +39,10 @@ function getDogs(url) {
                         return dog.image.url === leftImage.src;
                     })
                     localStorage.setItem(dogsStorageKey, JSON.stringify(foundDog));
+                    let finalDog = JSON.parse(localStorage.getItem('liked-dogs'));
                     document.getElementById('initial-page').style.display = 'none';
+                    document.getElementById('final-dog-image').src = finalDog.image.url;
+                    console.log(finalDog.image.url)
                     document.getElementById('final-page').style.display = 'block';
             }
         })
@@ -53,7 +56,10 @@ function getDogs(url) {
                     return dog.image.url === document.getElementById('right-image').getAttribute('src')
                 })
                 localStorage.setItem(dogsStorageKey, JSON.stringify(foundDog));
+                let finalDog = JSON.parse(localStorage.getItem('liked-dogs'));
                 document.getElementById('initial-page').style.display = 'none';
+                document.getElementById('final-dog-image').src = finalDog.image.url;
+                console.log(finalDog.image.url)
                 document.getElementById('final-page').style.display = 'block';
             }
             
