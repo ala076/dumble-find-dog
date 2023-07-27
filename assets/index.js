@@ -42,6 +42,7 @@ function getDogs(url) {
                     let finalDog = JSON.parse(localStorage.getItem('liked-dogs'));
                     document.getElementById('initial-page').style.display = 'none';
                     document.getElementById('final-dog-image').src = finalDog.image.url;
+                    document.getElementById('winning-breed').innerHTML = finalDog.name;
                     console.log(finalDog.image.url)
                     document.getElementById('final-page').style.display = 'block';
             }
@@ -59,6 +60,7 @@ function getDogs(url) {
                 let finalDog = JSON.parse(localStorage.getItem('liked-dogs'));
                 document.getElementById('initial-page').style.display = 'none';
                 document.getElementById('final-dog-image').src = finalDog.image.url;
+                document.getElementById('winning-breed').innerHTML = finalDog.name;
                 console.log(finalDog.image.url)
                 document.getElementById('final-page').style.display = 'block';
             }
