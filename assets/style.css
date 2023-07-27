@@ -43,3 +43,11 @@
 #right-image {
     width: 50%;
 }
+
+#initial-page {
+    display: visible;
+}
+
+/* #final-page {
+    display: none;
+} */
