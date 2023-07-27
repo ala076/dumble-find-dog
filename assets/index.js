@@ -4,6 +4,7 @@ $('#dayJsEl').text(dayWeek);
 var leftButton = document.getElementById('left-button');
 var rightButton = document.getElementById('right-button');
 var dogsStorageKey = 'liked-dogs';
+var bodyEl = document.getElementById('body');
 
 var apiKey = 'live_iX7RKYHwWFdPNAzqsGY55sDz4EP3dPmFV7zFe8mztg9rlJ3glpV2KggBggBTfXQq';
 
@@ -38,6 +39,8 @@ function getDogs(url) {
                         return dog.image.url === leftImage.src;
                     })
                     localStorage.setItem(dogsStorageKey, JSON.stringify(foundDog));
+                    document.getElementById('initial-page').style.display = 'none';
+                    document.getElementById('final-page').style.display = 'block';
             }
         })
 
@@ -50,6 +53,8 @@ function getDogs(url) {
                     return dog.image.url === document.getElementById('right-image').getAttribute('src')
                 })
                 localStorage.setItem(dogsStorageKey, JSON.stringify(foundDog));
+                document.getElementById('initial-page').style.display = 'none';
+                document.getElementById('final-page').style.display = 'block';
             }
             
         })

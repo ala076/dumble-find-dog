@@ -28,7 +28,8 @@
     </header>
 
     <main>
-        <div class="dog-container">
+        <div id="body" class="dog-container">
+            <div id="initial-page">
             <div id="directions">
                 <h6>Choose between the dogs below, and after all choices are complete you will be presented with the breed you get to adopt!</h6>
             </div>
@@ -43,6 +44,12 @@
                     <input id="right-button" class="button-primary" type="submit" value="Pick Me!">
                     <img id="right-image" src="" alt="Dog Photo">
                 </div>
+            </div>
+            </div>
+
+            <div id="final-page" style="display: none">
+                <p>Congratulations, your new dog is a <span id="winning-breed"></span></p>
+                <img src="#" alt="Winning Dog Breed">
             </div>
         </div>
     </main>
