@@ -5,12 +5,31 @@
 
 .navbar {
     text-align: center;
-    background-color: blue;
+    background-color: darkslategray;
+    color: ghostwhite;
     position: relative;
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
+}
+#dayJsEl {
+    font-size: 20px;
+}
+img {
+   border-radius: 4px;
+   border: 1px solid #ddd;
+   padding: 5px;
+   width: 80%;
+   height: auto;
+
+}
+#final-page {
+    width: 75%;
+    margin: 0 auto;
+}
+#final-page p {
+   font-size: 25px; 
 }
 
 
@@ -36,13 +55,7 @@
     align-items: center;
 }
 
-#left-image {
-    width: 50%;
-}
 
-#right-image {
-    width: 50%;
-}
 
 #initial-page {
     display: visible;
